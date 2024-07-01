@@ -1,13 +1,17 @@
 import React from "react";
 import slackIcon from "../assets/slackIcon.png";
-import {account} from "../config/config.js"
+import { account } from "../config/config.js";
 function LoginWithGoogle() {
+  function loginHandler(e) {
+    e.preventDefault();
 
-       function loginHandler(e) {
-        e.preventDefault();
-
-        account.createOAuth2Session('google', 'https://slack-clone-by-vinaybhoure.vercel.app', 'https://slack-clone-by-vinaybhoure.vercel.app')
-       }
+    // account.createOAuth2Session('google', 'https://slack-clone-by-vinaybhoure.vercel.app', 'https://slack-clone-by-vinaybhoure.vercel.app')
+    account.createOAuth2Session(
+      "google",
+      "http://localhost:3000/",
+      "http://localhost:3000/"
+    );
+  }
 
   return (
     <div className="flex justify-center items-center h-[100%] bg-gray-200">
@@ -19,7 +23,6 @@ function LoginWithGoogle() {
             src={slackIcon}
             alt="Rounded avatar"
           />
-         
         </div>
         <form
           onSubmit={loginHandler}

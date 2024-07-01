@@ -26,7 +26,7 @@ export default function Header() {
         <input
           type="text"
           name="search"
-          placeholder="Search vinayBhoure"
+          placeholder="Search ashishbhoure"
           className="bg-[transparent] text-white "
         />
       </div>

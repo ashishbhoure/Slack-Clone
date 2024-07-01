@@ -6,10 +6,7 @@ import { ID } from "appwrite";
 import { account } from "../config/config";
 import toast from "react-hot-toast";
 
-function ChatInput({channelId, flag, setFlag }) {
-
-  
-  
+function ChatInput({ channelId, flag, setFlag }) {
   const [inputData, setInputData] = useState({
     inputData: "",
   });
@@ -37,8 +34,8 @@ function ChatInput({channelId, flag, setFlag }) {
       return false;
     }
     const message = databases.createDocument(
-      "657c921dbb1d727e7892",
-      "657c9243cef5deb3affe",
+      "668276c2000035250fe7", // data base ID
+      "6682775a001c800b0236",
       ID.unique(),
       {
         rooms: channelId,
@@ -50,7 +47,7 @@ function ChatInput({channelId, flag, setFlag }) {
     message.then(
       function (response) {
         setInputData({ inputData: "" });
-        console.log("chat message",response);
+        console.log("chat message", response);
         setFlag(!flag);
       },
       function (error) {

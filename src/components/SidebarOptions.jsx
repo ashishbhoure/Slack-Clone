@@ -32,6 +32,7 @@ export default function SidebarOptions({
   /* -----------------------------------------------------------------------------------------------------------------------
                                    // inserting data into rooms table
   -------------------------------------------------------------------------------------------------------------------------- */
+
   const addChannel = () => {
     try {
       const channelName = prompt("Please enter the channel name");
@@ -43,8 +44,8 @@ export default function SidebarOptions({
       }
 
       const promise = databases.createDocument(
-        "657c921dbb1d727e7892", // database id
-        "657c92254fd30c159f33", // collection id
+        "668276c2000035250fe7", // database id
+        "668276d1002224544881", // room id
         ID.unique(), // document id
         {
           channelName: channelName,
@@ -74,8 +75,8 @@ export default function SidebarOptions({
     e.preventDefault();
 
     const data = databases.getDocument(
-      "657c921dbb1d727e7892", // database id
-      "657c92254fd30c159f33", // collection id
+      "668276c2000035250fe7", // database id
+      "668276d1002224544881", // room id
       id // document id
     );
     data.then(

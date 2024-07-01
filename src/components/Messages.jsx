@@ -12,8 +12,8 @@ function Messages({flag}) {
     setIsLoading(true);
     console.log("component rendered");
     const AllMessages = databases.listDocuments(
-      "657c921dbb1d727e7892",
-      "657c9243cef5deb3affe",
+      "668276c2000035250fe7", // db id
+      "6682775a001c800b0236", // message id
       [
         Query.equal("rooms", [roomId])
       ]
